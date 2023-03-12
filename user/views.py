@@ -7,8 +7,8 @@ from user.models import *
 def register(request):  
     if request.method == 'POST':  
         username = request.POST.get('username') 
-        password_1 = request.POST.get('password_1')
-        password_2 = request.POST.get('password_2')
+        password_1 = request.POST.get('password')
+        password_2 = request.POST.get('password2')
         email = request.POST.get('email')
         if password_1 != password_2:   
             return JsonResponse({'errno': 250, 'msg': r"两次输入的密码不同"})
